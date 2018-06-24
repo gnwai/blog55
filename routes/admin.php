@@ -17,5 +17,5 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::get('index', 'Home@index');
+Route::get('/', 'Home@index');
 
