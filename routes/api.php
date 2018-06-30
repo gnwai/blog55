@@ -13,9 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 
 Route::get('index', 'Home@index');
 
+Route::post('login', 'Passport@login');
+Route::post('register', 'Passport@register');
+
+Route::group(['middleware' => 'auth:api'], function(){
+
+    Route::get('/get-user', 'Passport@getUser');
+    Route::group(['prefix' => 'other'], function(){
+//        Route::get('get-details', 'Passport@getDetails');
+    });
+});
