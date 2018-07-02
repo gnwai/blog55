@@ -46,9 +46,10 @@ https://laravel-china.org/articles/10188/laravel-55-uses-passport-services-to-do
         }
     }
 
-    public function getUser()
+    public function getUser(Request $request)
     {
-        $user = Auth::user();
+        // $user = Auth::guard('api')->user();
+        $user = $request->user();
         return response()->json(['success' => $user], 200);
     }
 
