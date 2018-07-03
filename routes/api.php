@@ -24,5 +24,8 @@ Route::group(['middleware' => 'authPt:api'], function(){
     Route::get('/get-user', 'Passport@getUser');
     Route::group(['prefix' => 'other'], function(){
 //        Route::get('get-details', 'Passport@getDetails');
+//        Route::get('get-details', 'Passport@getDetails');
+       Route::get('get-list', 'Passport@list');
+       Route::get('get-last', 'Passport@last');
     });
 });
