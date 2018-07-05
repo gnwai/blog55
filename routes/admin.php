@@ -19,3 +19,14 @@ use Illuminate\Http\Request;
 
 Route::get('/', 'Home@index');
 
+Route::post('/register', 'Access@register');
+Route::post('/login', 'Access@login');
+
+Route::group(['middleware' => 'auth:admin'], function(){
+
+    Route::get('/get-user', 'Access@getUser');
+    Route::group(['prefix' => 'xxxx'], function(){
+//        Route::get('get-details', 'Passport@getDetails');
+    });
+});
+

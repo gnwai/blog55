@@ -46,6 +46,12 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+
+        'admin' => [
+//            'driver' => 'token',
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -69,6 +75,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Model\Admin::class,
         ],
 
         // 'users' => [

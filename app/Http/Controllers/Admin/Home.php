@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class Home extends Controller {
@@ -10,6 +12,9 @@ class Home extends Controller {
 //        return 'Admin/Home/index';
         return view('admin/admin');
     }
+
+
+
 
 
 }

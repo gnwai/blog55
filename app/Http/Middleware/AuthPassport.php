@@ -10,12 +10,13 @@ class AuthPassport
 {
     function __construct()
 	{
-		Config::set('auth.defaults.guard', 'api');
+//		Config::set('auth.defaults.guard', 'api');
 		// Config::set('auth.providers.users.model', \App\Model\SDWEmployee::class);
     }
     
-    public function handle($req, Closure $next, $guard)
+    public function handle($req, Closure $next, $guard='api')
 	{
+        Config::set('auth.defaults.guard', $guard);
 		// return $next($req);
 		// $token = $req->get('dev-token');
         // $res = $req->user($guard);
