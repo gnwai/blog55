@@ -48,9 +48,8 @@ return [
         ],
 
         'admin' => [
-//            'driver' => 'token',
             'driver' => 'passport',
-            'provider' => 'users',
+            'provider' => 'admin',
         ],
     ],
 

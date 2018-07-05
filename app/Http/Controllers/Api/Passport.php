@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class Passport extends Controller {
 
@@ -36,6 +37,8 @@ https://laravel-china.org/articles/10188/laravel-55-uses-passport-services-to-do
 
     public function login(){
 
+        //使用这个就登入失败
+//        Config::set('auth.defaults.guard', 'api');
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
