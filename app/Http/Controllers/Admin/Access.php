@@ -26,7 +26,8 @@ class Access extends Controller {
     public function login()
     {
         //attempt 方法 not exist
-        Config::set('auth.defaults.guard', 'admin');
+//        Config::set('auth.defaults.guard', 'admin');
+//        Config::set('auth.providers.users.model', \App\Model\Admin::class); //对应模型
 
         if(Auth::attempt(['account' => request('account'), 'pwd' => request('pwd')])){
             $user = Auth::user();

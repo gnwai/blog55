@@ -37,9 +37,11 @@ https://laravel-china.org/articles/10188/laravel-55-uses-passport-services-to-do
 
     public function login(){
 
+
         //使用这个就登入失败
 //        Config::set('auth.defaults.guard', 'api');
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
+//        Config::set('auth.providers.users.model', \App\User::class); //对应模型
+        if(auth()->attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             return response()->json(['success' => $success], 200);
