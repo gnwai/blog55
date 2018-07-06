@@ -29,3 +29,10 @@ Route::group(['middleware' => 'authPt:api'], function(){
        Route::get('get-last', 'Passport@last');
     });
 });
+
+
+
+//token 方式登入 api_token  Bearer token  在Header部分
+Route::middleware('auth:tok')->get('/user-token', function (Request $request) {
+    return $request->user();
+});

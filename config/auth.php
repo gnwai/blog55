@@ -47,6 +47,11 @@ return [
             'provider' => 'users',
         ],
 
+        'tok' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
+
         'admin' => [
             'driver' => 'passport',
             'provider' => 'admin',
