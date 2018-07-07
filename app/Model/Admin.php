@@ -4,11 +4,11 @@ namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Admin extends Authenticatable
+class Admin extends Authenticatable implements JWTSubject
 {
-    use Notifiable, HasApiTokens;
+    use Notifiable;
 
     public $table = 'admin';
 
@@ -30,4 +30,24 @@ class Admin extends Authenticatable
     protected $hidden = [
         'pwd',
     ];
+
+    //  JWT-Auth默认要实现的方法
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    // JWT-Auth默认要实现的方法
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    /**
+     *  重写的方法
+     */
+    public function getAuthPassword()
+    {
+        return $this->getAttribute('pwd');  # 表中密码字段是pwd
+    }
+
 }

@@ -22,9 +22,9 @@ Route::get('/', 'Home@index');
 Route::post('/register', 'Access@register');
 Route::post('/login', 'Access@login');
 
-Route::group(['middleware' => 'auth:admin'], function(){
+Route::group(['middleware' => 'jwt:admin'], function(){
 
-    Route::get('/get-user', 'Access@getUser');
+    Route::get('/get-user', 'Access@index');
     Route::group(['prefix' => 'xxxx'], function(){
 //        Route::get('get-details', 'Passport@getDetails');
     });
