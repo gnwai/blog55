@@ -16,11 +16,24 @@ class Access extends Controller {
      */
     public function register()
     {
-        Admin::create([
-            'name' => 'admin',
-            'account' => 'admin@qq.com',        //此处例子假设以手机为账号
-            'pwd' => bcrypt('123456')  //加密务必用Laravel中hepler提供的bcrypt
-        ]);
+        try {
+            $res =  Admin::Create(
+                [
+                    'account' => request('account'),
+                    'name' => 'admin',
+                    //此处例子假设以手机为账号
+                    'pwd' => bcrypt(request('pwd'))  //加密务必用Laravel中hepler提供的bcrypt
+                ]
+            );
+
+//            throw new \Exception(['']);
+
+
+        } catch (\Exception $e) {
+            return ($e->getMessage());
+        }
+
+
     }
     /**
      *  登录
