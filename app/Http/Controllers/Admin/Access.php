@@ -12,27 +12,31 @@ class Access extends Controller {
 
 
     /**
-     *  注册
+     *  admin注册
      */
-    public function register()
+    public function register(Request $req)
     {
-        try {
-            $res =  Admin::Create(
-                [
-                    'account' => request('account'),
-                    'name' => 'admin',
-                    //此处例子假设以手机为账号
-                    'pwd' => bcrypt(request('pwd'))  //加密务必用Laravel中hepler提供的bcrypt
-                ]
-            );
+        if (!$req->account || !$req->pwd) {
 
-//            throw new \Exception(['']);
+            return $this->resFail('Account or pwd is invalid');
+        }
+        $res = Admin::where('account', $req->account)->first();
+        if ($res) {
 
+            return $this->resFail('This account is exist!');
 
-        } catch (\Exception $e) {
-            return ($e->getMessage());
         }
 
+        $res =  Admin::Create(
+            [
+                'account' => request('account'),
+                'name' => request('name'),
+                'pwd' => bcrypt(request('pwd'))  //加密务必用Laravel中hepler提供的bcrypt
+            ]
+        );
+
+        return $this->resSuccess('success');
+       
 
     }
     /**
