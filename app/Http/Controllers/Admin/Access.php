@@ -16,9 +16,9 @@ class Access extends Controller {
      */
     public function register(Request $req)
     {
-        if (!$req->account || !$req->pwd) {
+        if (!$req->account || !$req->pwd || !$req->name) {
 
-            return $this->resFail('Account or pwd is invalid');
+            return $this->resFail('Account or pwd is not null');
         }
         $res = Admin::where('account', $req->account)->first();
         if ($res) {
@@ -43,15 +43,28 @@ class Access extends Controller {
      *  登录
      * @param Request $request
      */
-    public function login(Request $request)
+    public function login(Request $req)
     {
 
         config(['auth.defaults.guard' => 'admin']);
         //attempt方法用于验证帐号信息 成功则生成token值
         //attempt必须有"password"字段，无论你是自定义密码字段
-        $token = JWTAuth::attempt(['account'=>'admin@qq.com','password'=>123456]);
-        return response(json_encode(['token'=>$token]),200);
+        if (!$req->account || !$req->pwd) {
+            return $this->resFail('Account or pwd is null');
+        }
+
+        //这里一定要写 password ,尽管数据库的字段是pwd
+        $token = JWTAuth::attempt(['account'=> $req->account, 'password'=> $req->pwd]);
+
+        if ($token) {
+            return $this->resSuccess('success', [
+                'token' => $token
+            ]);
+        }
+        return $this->resFail('Account or Pwd is Error !');
     }
+
+
     /**
      * 访问内部页面
      * 附上Header "Authorization" : "Bearer token值" 注意Bearer与token值间的空格

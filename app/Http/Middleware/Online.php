@@ -7,15 +7,14 @@ use Closure;
 class Online
 {
 
-//	use \App\Contracts\Http\Responser;
+	use \App\Contracts\Http\Responser;
 
-	function __construct()
-	{
-//		Config::set('auth.providers.users.model', \App\Model\SDWEmployee::class);
-	}
 
-	public function handle($req, Closure $next, $guard='admin')
+	public function handle($req, Closure $next, $guard='')
 	{
+        //		Config::set('auth.providers.users.model', \App\Model\SDWEmployee::class);
+        config(['auth.defaults.guard' => $guard]);
+
 //		return $next($req);
 //		$token = $req->get('dev-token');
 //
@@ -26,16 +25,10 @@ class Online
 //		} else {
 //			$res = $req->user();
 //		}
-        config(['auth.defaults.guard' => $guard]);
 
         $user = auth($guard)->user();
-        if ($user) {
-            return $next($req);
-        }
 
-        return response(json_encode(['status'=> 'error']), 201);
-
-//		return $res ? $next($req) : $this->resAlert('You are offline or online expired, please login.');
+		return $user ? $next($req) : $this->resAlert('You are offline , please login.');
 	}
 
 
