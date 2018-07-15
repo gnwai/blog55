@@ -7,7 +7,7 @@ use Closure;
 class Online
 {
 
-	use \App\Contracts\Http\Responser;
+	use \G2B2G\Contracts\Eloquent\Translate\Responser;
 
 
 	public function handle($req, Closure $next, $guard='')

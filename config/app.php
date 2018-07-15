@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        G2B2G\UfffServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -177,6 +178,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 //        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+
+
 
     ],
 

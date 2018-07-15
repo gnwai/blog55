@@ -22,6 +22,9 @@ Route::get('/', 'Home@index');
 Route::post('/register', 'Access@register');
 Route::post('/login', 'Access@login');
 
+// 上传文件
+Route::post('uploadFile', '\App\Http\Controllers\Common\Upload@uploadFile');
+
 Route::group(['middleware' => 'jwt:admin'], function(){
 
     Route::get('/get-user', 'Access@index');
