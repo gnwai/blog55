@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "618586b55e5dda5ee225f7159347f2cf",
+    "content-hash": "34d59a5f7e5f3856ac246818ee10562e",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -3266,12 +3266,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wubuze/g2b2g.git",
-                "reference": "bef0ef0303906a65f11140528f1f4bd759648eeb"
+                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/bef0ef0303906a65f11140528f1f4bd759648eeb",
-                "reference": "bef0ef0303906a65f11140528f1f4bd759648eeb",
+                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/964b672ff356898317d3c435ae6cc8cba41430e5",
+                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5",
                 "shasum": ""
             },
             "require": {
@@ -3292,7 +3292,7 @@
                 "big5 to gbk",
                 "gbk to big5"
             ],
-            "time": "2018-06-15 06:17:11"
+            "time": "2018-07-15 09:52:07"
         },
         {
             "name": "zendframework/zend-diactoros",

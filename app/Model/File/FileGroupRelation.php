@@ -2,7 +2,7 @@
 
 namespace App\Model\File;
 
-use App\Contracts\Eloquent\Translate\Base;
+use G2B2G\Contracts\Eloquent\Translate\Base;
 
 trait FileGroupRelation
 {
