@@ -11,6 +11,7 @@
         "laravel/passport": "~4.0",
         "laravel/tinker": "~1.0",
         "tymon/jwt-auth": "^1.0.0",
+        "wubuze/g2b2g": "dev-master",
         "wubuze/upload-file": "dev-master"
     },
     "require-dev": {

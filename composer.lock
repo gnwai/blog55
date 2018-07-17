@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acf1ed6c6c5bb065e63f844a7bb48208",
+    "content-hash": "afccf1ac47f118ad2032ec075a7d76d5",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -3271,6 +3271,40 @@
             "time": "2018-07-01T10:25:50+00:00"
         },
         {
+            "name": "wubuze/g2b2g",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wubuze/g2b2g.git",
+                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/964b672ff356898317d3c435ae6cc8cba41430e5",
+                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "G2B2G\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "gbk2big52gbk for PHP ",
+            "keywords": [
+                "big5 to gbk",
+                "gbk to big5"
+            ],
+            "time": "2018-07-15T09:52:07+00:00"
+        },
+        {
             "name": "wubuze/upload-file",
             "version": "dev-master",
             "source": {
@@ -5101,6 +5135,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "wubuze/g2b2g": 20,
         "wubuze/upload-file": 20
     },
     "prefer-stable": true,
