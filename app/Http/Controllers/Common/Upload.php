@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Common;
 //use App\Plugin\Qiniu\Integration as QiniuSDK;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use G2B2G\File\Uploader;
+use UploadFile\File\Uploader;
 
 /**
  * 全局上传组件

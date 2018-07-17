@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afccf1ac47f118ad2032ec075a7d76d5",
+    "content-hash": "c491d8452539eff5e1187de00afa2dca",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -3272,16 +3272,16 @@
         },
         {
             "name": "wubuze/g2b2g",
-            "version": "dev-master",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wubuze/g2b2g.git",
-                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5"
+                "reference": "1910801fb69d9265779f7d653549c46fa254b155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/964b672ff356898317d3c435ae6cc8cba41430e5",
-                "reference": "964b672ff356898317d3c435ae6cc8cba41430e5",
+                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/1910801fb69d9265779f7d653549c46fa254b155",
+                "reference": "1910801fb69d9265779f7d653549c46fa254b155",
                 "shasum": ""
             },
             "require": {
@@ -3302,7 +3302,7 @@
                 "big5 to gbk",
                 "gbk to big5"
             ],
-            "time": "2018-07-15T09:52:07+00:00"
+            "time": "2018-07-17T08:33:35+00:00"
         },
         {
             "name": "wubuze/upload-file",
@@ -5135,7 +5135,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wubuze/g2b2g": 20,
         "wubuze/upload-file": 20
     },
     "prefer-stable": true,
