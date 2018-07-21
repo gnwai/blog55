@@ -19,7 +19,10 @@ class Admin extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'account', 'pwd',
+        'name', 'account',
+        'pwd',
+        'address',
+        'date'
     ];
 
     /**
@@ -29,6 +32,11 @@ class Admin extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'pwd',
+    ];
+
+    protected $casts = [
+        'address' => 'array',
+        'active' => 'boolean'
     ];
 
     //  JWT-Auth默认要实现的方法

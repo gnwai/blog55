@@ -15,7 +15,7 @@ class Online
         //		Config::set('auth.providers.users.model', \App\Model\SDWEmployee::class);
         config(['auth.defaults.guard' => $guard]);
 
-//		return $next($req);
+		return $next($req);
 //		$token = $req->get('dev-token');
 //
 //		if ($token && config('app.env')=='local') { //本地测试 by wubuze

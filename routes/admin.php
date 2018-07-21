@@ -28,8 +28,9 @@ Route::post('uploadFile', '\App\Http\Controllers\Common\Upload@uploadFile');
 Route::group(['middleware' => 'jwt:admin'], function(){
 
     Route::get('/get-user', 'Access@index');
-    Route::group(['prefix' => 'xxxx'], function(){
-//        Route::get('get-details', 'Passport@getDetails');
+    Route::group(['prefix' => 'user'], function(){
+        Route::post('edit', 'Home@editUser');
+        Route::get('list', 'Home@userList');
     });
 });
 
