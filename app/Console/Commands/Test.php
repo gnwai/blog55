@@ -4,11 +4,13 @@ namespace App\Console\Commands;
 
 
 use Illuminate\Console\Command;
+use Illuminate\Console\DetectsApplicationNamespace;
 
 
 class Test extends Command
 {
 
+    use DetectsApplicationNamespace;
     protected $signature = 'make:system';
 
     protected $description = '';
@@ -34,7 +36,7 @@ class Test extends Command
         return str_replace(
             '{{namespace}}',
             $this->getAppNamespace(),
-            file_get_contents(__DIR__.'/stubs/make/controllers/HomeController.stub')
+            file_get_contents(__DIR__.'/stubs/make/controllers/system.stub')
         );
     }
 

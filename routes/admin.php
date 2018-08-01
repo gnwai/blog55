@@ -45,3 +45,8 @@ Route::group(['middleware' => 'jwt:admin'], function(){
 
 });
 
+
+
+Auth::routes333();
+
+Route::get('/home-tetetetetete', 'HomeController@index')->name('home');
