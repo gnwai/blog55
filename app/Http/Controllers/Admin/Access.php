@@ -76,6 +76,10 @@ class Access extends Controller {
         //return Auth::id();  //直接获取用户id
 //        return Auth::guard('admin')->user();  //直接获取用户model
 
+        if(!$request->user()) {
+            return 'no login';
+        }
+
         return $request->user();
     }
 
