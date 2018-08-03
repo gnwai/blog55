@@ -3603,12 +3603,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gnwai/uploadFile.git",
-                "reference": "55172234147705985a468120a63f9d8444ec998f"
+                "reference": "40aa250d15ba14226adbb0ba587e8a00502e7da8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gnwai/uploadFile/zipball/55172234147705985a468120a63f9d8444ec998f",
-                "reference": "55172234147705985a468120a63f9d8444ec998f",
+                "url": "https://api.github.com/repos/gnwai/uploadFile/zipball/40aa250d15ba14226adbb0ba587e8a00502e7da8",
+                "reference": "40aa250d15ba14226adbb0ba587e8a00502e7da8",
                 "shasum": ""
             },
             "require": {
@@ -3630,7 +3630,7 @@
                 "upload file",
                 "upload img"
             ],
-            "time": "2018-08-01T08:52:26+00:00"
+            "time": "2018-08-03T06:41:09+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
