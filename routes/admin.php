@@ -34,19 +34,7 @@ Route::group(['middleware' => 'jwt:admin'], function(){
         Route::get('list', 'Home@userList');
     });
 
-
-    //system setting
-    Route::group(['prefix' => 'system'], function(){
-        Route::get('list', 'System@category');
-        Route::get('detail', 'System@group');
-        Route::post('save', 'System@save');
-    });
-
-
 });
 
 
 
-Auth::routes333();
-
-Route::get('/home-tetetetetete', 'HomeController@index')->name('home');
