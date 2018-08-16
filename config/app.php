@@ -167,8 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
-//        G2B2G\UfffServiceProvider::class,
-//        UploadFile\UploadFileServiceProvider::class,
+
+        UploadFile\UploadFileServiceProvider::class,
 
         /*
          * Application Service Providers...
