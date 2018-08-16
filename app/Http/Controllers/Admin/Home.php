@@ -9,8 +9,67 @@ class Home extends Controller {
 
     public function index()
     {
+
+//        $aaa = 'hello';
+//        $a = function ($h) use (&$aaa){
+//
+//            return "{$h}, {$aaa}";
+//
+//        };
+//        $aaa = 'bbd';
+//
+//        return $a('hello');
+
+
+//递归闭包
+//        $test = function ($a) use (&$test)  {
+//            echo $a;
+//            $a --;
+//
+//            if ($a > 0) {
+//                return $test($a);
+//            }
+//        };
+//
+//       return  $test(10);
+
+
+//        $ccc = 1;
+//
+//        $this->test('wbzddd', function($name) use ($ccc) {
+//
+//
+//            $d =   'Hello '.$name. $ccc;
+//
+//
+//            $ccc = 100;
+//                return 'error';
+//
+//
+//            \Log::info('123');
+//
+//
+//        });
+//
+//
+//        return $ccc;
+//
+//
 //        return 'Admin/Home/index';
+
+
+
         return view('admin/admin');
+    }
+
+
+
+    public function test($a, $back)
+    {
+        $back($a);
+
+
+
     }
 
 
