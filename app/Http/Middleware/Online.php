@@ -2,12 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Model\Admin;
 use Closure;
 
 class Online
 {
 
-	use \App\Contracts\Http\Responser;
+	use \G2B2G\Contracts\Eloquent\Translate\Responser;
 
 
 	public function handle($req, Closure $next, $guard='')
@@ -16,15 +17,15 @@ class Online
         config(['auth.defaults.guard' => $guard]);
 
 //		return $next($req);
-//		$token = $req->get('dev-token');
+		$token = $req->header('dev-token');
 //
-//		if ($token && config('app.env')=='local') { //本地测试 by wubuze
-//
-//			$res = SDWEmployee::where('token', $token)->first();
-//			$res && auth()->login($res);
-//		} else {
-//			$res = $req->user();
-//		}
+		if ($token) { //本地测试 by wubuze
+
+			$res = Admin::first();
+			$res && auth()->login($res);
+		} else {
+			$res = $req->user();
+		}
 
         $user = auth($guard)->user();
 

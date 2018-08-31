@@ -22,11 +22,30 @@ Route::get('/', 'Home@index');
 Route::post('/register', 'Access@register');
 Route::post('/login', 'Access@login');
 
+// 上传文件
+Route::post('uploadFile', '\App\Http\Controllers\Common\Upload@uploadFile');
+
 Route::group(['middleware' => 'jwt:admin'], function(){
 
     Route::get('/get-user', 'Access@index');
-    Route::group(['prefix' => 'xxxx'], function(){
-//        Route::get('get-details', 'Passport@getDetails');
+
+    Route::group(['prefix' => 'user'], function(){
+        Route::post('edit', 'Home@editUser');
+        Route::get('list', 'Home@userList');
     });
+
 });
 
+
+
+
+//Auth::routes333();
+
+//Route::get('/home-tetetetetete', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'system'], function(){
+    Route::get('list', 'System@category');
+    Route::get('detail', 'System@group');
+    Route::post('save', 'System@save');
+});

@@ -6,11 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "barryvdh/laravel-cors": "^0.11.0",
         "fideloper/proxy": "~3.3",
+        "jdavidbakr/replaceable-model": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/passport": "~4.0",
         "laravel/tinker": "~1.0",
-        "tymon/jwt-auth": "^1.0.0"
+        "swooletw/laravel-swoole": "^2.4.1",
+        "tymon/jwt-auth": "^1.0.0",
+        "wubuze/g2b2g": "1.4.1",
+        "wubuze/upload-file": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -57,5 +62,8 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "packagist": { "type": "composer", "url": "https://packagist.org" }
+    }
 }

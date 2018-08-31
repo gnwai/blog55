@@ -168,6 +168,8 @@ return [
          * Package Service Providers...
          */
 
+        UploadFile\UploadFileServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -177,6 +179,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 //        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+
+
 
     ],
 
