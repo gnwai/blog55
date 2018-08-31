@@ -14,6 +14,12 @@ class Home extends Controller {
     }
 
 
+    public function test()
+    {
+    	return 'ok';
+    }
+
+
 
 
 
