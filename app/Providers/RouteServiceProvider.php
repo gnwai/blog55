@@ -40,6 +40,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        //测试路由
+        $this->Tester();
+
         //
     }
 
@@ -79,4 +82,13 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace.'\Admin')
             ->group(base_path('routes/admin.php'));
     }
+
+    protected function Tester()
+    {
+        Route::prefix('tester')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/tester.php'));
+    }
+
+
 }
