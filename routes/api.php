@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
 
 
-Route::get('index', 'Home@index');
+Route::get('/', 'Home@index');
+Route::get('/home', 'Home@index');
 
 Route::post('login', 'Passport@login');
 Route::post('register', 'Passport@register');

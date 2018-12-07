@@ -9,6 +9,12 @@ class Home extends Controller {
 
     public function index()
     {
+        return view('admin/admin');
+
+    }
+
+    public function index2()
+    {
 
 //        $aaa = 'hello';
 //        $a = function ($h) use (&$aaa){
@@ -55,11 +61,10 @@ class Home extends Controller {
 //        return $ccc;
 //
 //
-//        return 'Admin/Home/index';
+        return 'Admin/Home/index';
 
 
 
-        return view('admin/admin');
     }
 
 
@@ -68,15 +73,6 @@ class Home extends Controller {
     	return 'ok';
     }
 
-
-
-    public function test($a, $back)
-    {
-        $back($a);
-
-
-
-    }
 
 
     public function editUser(Request $req)
