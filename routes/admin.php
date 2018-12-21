@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 //});
 
 Route::get('/', 'Home@index');
+Route::get('/test', 'Home@test');
 
 Route::post('/register', 'Access@register');
 Route::post('/login', 'Access@login');

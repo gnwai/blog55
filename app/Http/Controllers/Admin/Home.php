@@ -13,6 +13,11 @@ class Home extends Controller {
 
     }
 
+    public function test()
+    {
+    	return 'test';
+    }
+
     public function index2()
     {
 
@@ -68,10 +73,7 @@ class Home extends Controller {
     }
 
 
-    public function test()
-    {
-    	return 'ok';
-    }
+    
 
 
 
