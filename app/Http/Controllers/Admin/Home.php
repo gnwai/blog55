@@ -15,7 +15,7 @@ class Home extends Controller {
 
     public function test()
     {
-    	return 'test';
+    	return 'test blog55';
     }
 
     public function index2()
