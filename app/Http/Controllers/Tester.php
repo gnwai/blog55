@@ -22,6 +22,7 @@ class Tester extends Controller
 	}
 
 
+    /** 删除log */
 	public function clearLog (){
 	
 		$file = base_path('storage/logs/laravel.log') ;
