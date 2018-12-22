@@ -31,7 +31,8 @@ class Tester extends Controller
 
     public function wubuze()
     {
-        return 'test-wubuze';
+
+        return 'test-wubuze 33333';
     }
 
 
