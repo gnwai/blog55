@@ -21,7 +21,6 @@ class Tester extends Controller
 
 	}
 
-
     /** 删除log */
 	public function clearLog (){
 	
