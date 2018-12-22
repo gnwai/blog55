@@ -39,6 +39,24 @@ class Admin extends Authenticatable implements JWTSubject
         'active' => 'boolean'
     ];
 
+
+
+    public function setAccountAttribute($val)
+    {
+
+        return $this->attributes['account'] = $val.rand(1,999);
+    }
+
+    public function getDateAttribute($val)
+    {
+        if (!$val) {
+            return date('Y-m-d H:i:s');
+        }
+
+        return $val;
+    }
+
+
     //  JWT-Auth默认要实现的方法
     public function getJWTIdentifier()
     {
