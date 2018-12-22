@@ -32,7 +32,7 @@ class Tester extends Controller
     public function wubuze()
     {
 
-        return '66666888888887777';
+        return '要哭了';
     }
 
 
