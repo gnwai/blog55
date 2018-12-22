@@ -13,6 +13,21 @@ class Tester extends Controller
 //        $this->middleware('auth');
     }
 
+    public function showLog( Request $req ) {
+
+		// 这里使用 base_path()方法来定义路径 别用相对路径
+		 $file = base_path('storage/logs/laravel.log') ;
+		echo file_get_contents($file);
+
+	}
+
+
+	public function clearLog (){
+	
+		$file = base_path('storage/logs/laravel.log') ;
+		echo file_put_contents($file,'');
+		echo 'ok';
+	}
 
     public function wubuze()
     {
