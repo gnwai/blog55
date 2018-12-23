@@ -6,3 +6,6 @@
 
 #github webhook ok
 
+
+# php artisan migrate  数据库迁移
+
