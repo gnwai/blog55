@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
 Route::get('/', 'Home@index');
 Route::get('/home', 'Home@index');
 
+#testLogin
+Route::post('testLogin', 'Passport@testLogin');
+
 Route::post('login', 'Passport@login');
 Route::post('register', 'Passport@register');
 
@@ -65,4 +68,10 @@ Route::get('/callback', function (Request $request) {
 //token 方式登入 api_token  Bearer token  在Header部分
 Route::middleware('auth:tok')->get('/user-token', function (Request $request) {
     return $request->user();
+});
+
+
+#user
+Route::group(['prefix' => 'user'], function(){
+    Route::get('userList', 'User@userList');
 });

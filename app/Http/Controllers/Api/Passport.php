@@ -40,6 +40,11 @@ https://laravel-china.org/articles/10188/laravel-55-uses-passport-services-to-do
         return Auth::guard('api');
     }
 
+    public function testLogin()
+    {
+        return response()->json(['success' => 1], 200);
+    }
+
     public function login(){
 
 

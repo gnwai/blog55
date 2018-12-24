@@ -7,8 +7,7 @@ class Home extends Controller {
 
     public function index()
     {
-        return 'aaaaa';
-        return 'Api/Home/index';
+        return view('api/index');
 
         //跨域中间件
         //barryvdh/laravel-cors

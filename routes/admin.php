@@ -17,7 +17,9 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::get('/', 'Home@index');
+Route::get('/', 'Home@index');  #后台首页
+
+
 Route::get('/test', 'Home@test');
 
 Route::post('/register', 'Access@register');

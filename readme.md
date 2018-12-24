@@ -7,5 +7,10 @@
 #github webhook ok
 
 
-# php artisan migrate  数据库迁移
+# xxx.com/admin  后台
+
+# xxx.com/api 前台
+
+
+
 
