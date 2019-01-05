@@ -13,6 +13,24 @@ class Tester extends Controller
 //        $this->middleware('auth');
     }
 
+
+
+    //test
+    public function wubuze() {
+
+        #swoole  使用  https://laravel-china.org/topics/10939/use-swoole-to-speed-up-your-laravel-application
+
+
+
+
+
+
+
+        #
+        $path = storage_path('app/public/file.json');  //json 文件
+
+    }
+
     public function showLog( Request $req ) {
 
 		// 这里使用 base_path()方法来定义路径 别用相对路径
@@ -28,13 +46,6 @@ class Tester extends Controller
 		echo file_put_contents($file,'');
 		echo 'ok';
 	}
-
-    public function wubuze()
-    {
-
-        return '要哭了';
-    }
-
 
 
 
