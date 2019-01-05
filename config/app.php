@@ -180,7 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 //        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
-
+//        SwooleTW\Http\LaravelServiceProvider::class,  //5.5 以上laralvel 可以不需要
 
 
     ],
