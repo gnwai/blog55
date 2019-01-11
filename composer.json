@@ -12,6 +12,7 @@
         "laravel/framework": "5.5.*",
         "laravel/passport": "~4.0",
         "laravel/tinker": "~1.0",
+        "qiniu/php-sdk": "^7.2",
         "swooletw/laravel-swoole": "^2.4.1",
         "tymon/jwt-auth": "^1.0.0",
         "wubuze/g2b2g": "1.4.1",

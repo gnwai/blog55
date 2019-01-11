@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+use Qiniu\Auth;
+use Qiniu\Storage\UploadManager;
 
 class Tester extends Controller
 {
@@ -18,14 +20,38 @@ class Tester extends Controller
     //test
     public function wubuze() {
 
+
+        $accessKey ="";
+        $secretKey = "";
+        $bucket = "";
+
+        $auth = new Auth($accessKey, $secretKey);
+        $token = $auth->uploadToken($bucket);
+
+        $name = mt_rand(1,9999);
+//        return view('Tester.wubuze', ['token' => $token, 'name' => $name]);
+
+        // 要上传文件的本地路径
+        $filePath = public_path('/storage/user-photo/20180717-0813-982.jpeg');
+        // 上传到七牛后保存的文件名
+        $key = '20180717-0813-982.jpeg';
+        // 初始化 UploadManager 对象并进行文件的上传。
+        $uploadMgr = new UploadManager();
+        // 调用 UploadManager 的 putFile 方法进行文件的上传。
+
+        $arr  = $uploadMgr->putFile($token, $key, $filePath);
+
+        \Log::info($arr);
+
+        return list($ret, $err) = $arr;
+
+
+
+
+
+
+
         #swoole  使用  https://laravel-china.org/topics/10939/use-swoole-to-speed-up-your-laravel-application
-
-
-
-
-
-
-
         #
         $path = storage_path('app/public/file.json');  //json 文件
 
