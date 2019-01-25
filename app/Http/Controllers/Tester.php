@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;
+use Illuminate\Support\Facades\Redis;
+use UploadFile\File\Uploader;
 
 class Tester extends Controller
 {
@@ -18,42 +18,25 @@ class Tester extends Controller
 
 
     //test
-    public function wubuze() {
+    public function wubuze(Request $req) {
 
 
-        $accessKey ="";
-        $secretKey = "";
-        $bucket = "";
-
-        $auth = new Auth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
-        $name = mt_rand(1,9999);
-//        return view('Tester.wubuze', ['token' => $token, 'name' => $name]);
-
-        // 要上传文件的本地路径
-        $filePath = public_path('/storage/user-photo/20180717-0813-982.jpeg');
-        // 上传到七牛后保存的文件名
-        $key = '20180717-0813-982.jpeg';
-        // 初始化 UploadManager 对象并进行文件的上传。
-        $uploadMgr = new UploadManager();
-        // 调用 UploadManager 的 putFile 方法进行文件的上传。
-
-        $arr  = $uploadMgr->putFile($token, $key, $filePath);
-
-        \Log::info($arr);
-
-        return list($ret, $err) = $arr;
+        $module = config('storage.'.$req->input('module')); if (!$module) { return 'error'; }
 
 
+        Uploader::init($req->file('file'));
+
+        $file = Uploader::upload($module['dir'], $req->input('fileName'), $module['public']);
+        $file->setUrl();
 
 
+        return 1;
+        Redis::set('name', 'wubuze');
 
 
+        return Redis::get('name');
 
-        #swoole  使用  https://laravel-china.org/topics/10939/use-swoole-to-speed-up-your-laravel-application
-        #
-        $path = storage_path('app/public/file.json');  //json 文件
+        return 1;
 
     }
 
@@ -75,22 +58,7 @@ class Tester extends Controller
 
 
 
-    public function mail()
-    {
 
-        $order_id = ['asdf','asdgasd','121235123'];
-        Mail::send(
-            'mail_demo',  //邮件模板
-            ['order_id'=>$order_id],
-            function($message) use(&$sku){
-                $message
-                    ->to('1039289613@qq.com')
-//                    ->cc('jackie@soffeedesign.com')
-                    ->subject('sd-amazon 邮件配置测试');
-        });
-
-        return 'ok';
-    }
 
 
 }

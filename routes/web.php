@@ -17,6 +17,15 @@ Route::get('/', function () {
 });
 
 
+Route::group(['prefix' => 'home'], function () {
+
+    Route::get('', 'HomeController@index');
+    Route::get('/room', 'HomeController@room');
+    Route::get('/workerman', 'HomeController@workerman');
+
+});
+
+
 
 Auth::routes();
 

@@ -168,7 +168,7 @@ return [
          * Package Service Providers...
          */
 
-        UploadFile\UploadFileServiceProvider::class,
+//        UploadFile\UploadFileServiceProvider::class,  //5.5 以上laralvel 可以不需要
 
         /*
          * Application Service Providers...

@@ -7,3 +7,7 @@
 
 # wrk  https://www.cnblogs.com/xinzhao/p/6233009.html
 
+
+
+# swoole功能  需要 vendor:publish
+

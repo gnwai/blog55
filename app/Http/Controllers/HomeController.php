@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -23,7 +23,26 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return 'index';
         return view('home');
+
+    }
+
+
+    /**
+     * 聊天房间列表
+     */
+    public function room()
+    {
+
+        $res = [2,3,5];
+        return view('room', $res);
+    }
+
+
+    public function workerman()
+    {
+        return view('workerman');
     }
 
     public function test(Request $req)
