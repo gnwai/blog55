@@ -27,6 +27,15 @@ Route::group(['prefix' => 'home'], function () {
 
 
 
+Route::group(['prefix' => 'webIm'], function () {
+
+    Route::get('index', 'WebIm@index');
+
+
+});
+
+
+
 Auth::routes();
 
 

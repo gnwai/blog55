@@ -11,3 +11,7 @@
 
 # swoole功能  需要 vendor:publish
 
+
+
+# webIm 网页聊天功能
+## php artisan WebIm:http start
