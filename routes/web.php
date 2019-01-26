@@ -16,23 +16,22 @@ Route::get('/', function () {
 
 });
 
+#demo
+Route::any('/upload/index', 'UploadFile@index');
+Route::get('/webImg/index', 'WebIm@index');
+
+
+
+
 
 Route::group(['prefix' => 'home'], function () {
 
-    Route::get('', 'HomeController@index');
-    Route::get('/room', 'HomeController@room');
-    Route::get('/workerman', 'HomeController@workerman');
+    Route::any('/index', 'HomeController@index');
+    Route::any('/room', 'HomeController@room');
+    Route::any('/workerman', 'HomeController@workerman');
 
 });
 
-
-
-Route::group(['prefix' => 'webIm'], function () {
-
-    Route::get('index', 'WebIm@index');
-
-
-});
 
 
 

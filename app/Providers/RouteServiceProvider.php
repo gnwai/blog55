@@ -38,12 +38,15 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapAdminRoutes();
 
-        $this->mapWebRoutes();
+
+
 
         //测试路由
         $this->Tester();
 
-        //
+        //默认路由
+        $this->mapWebRoutes();
+
     }
 
     /**

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Illuminate\Support\Facades\Redis;
-use UploadFile\File\Uploader;
 
 class Tester extends Controller
 {
@@ -21,13 +20,7 @@ class Tester extends Controller
     public function wubuze(Request $req) {
 
 
-        $module = config('storage.'.$req->input('module')); if (!$module) { return 'error'; }
 
-
-        Uploader::init($req->file('file'));
-
-        $file = Uploader::upload($module['dir'], $req->input('fileName'), $module['public']);
-        $file->setUrl();
 
 
         return 1;
