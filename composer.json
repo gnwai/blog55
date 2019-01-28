@@ -16,7 +16,7 @@
         "swooletw/laravel-swoole": "^2.4.1",
         "tymon/jwt-auth": "^1.0.0",
         "workerman/phpsocket.io": "^1.1",
-        "wubuze/g2b2g": "1.4.1",
+        "wubuze/backend-system": "dev-master",
         "wubuze/upload-file": "dev-master"
     },
     "require-dev": {

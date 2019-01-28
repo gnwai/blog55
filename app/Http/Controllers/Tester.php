@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Illuminate\Support\Facades\Redis;
+use G2B2G\Ufff;
 
 class Tester extends Controller
 {
 
     public function __construct()
     {
+
 //        $this->middleware('auth');
     }
 
@@ -20,7 +22,7 @@ class Tester extends Controller
     public function wubuze(Request $req) {
 
 
-
+        return Ufff::gb2312_big5('吴步泽');
 
 
         return 1;

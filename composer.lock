@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdacef821cb617048f63a673de97008a",
+    "content-hash": "fc1e4819f85cf551d88564ba1b271223",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3725,51 +3725,17 @@
             "time": "2019-01-19T02:36:12+00:00"
         },
         {
-            "name": "wubuze/g2b2g",
-            "version": "v1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wubuze/g2b2g.git",
-                "reference": "1910801fb69d9265779f7d653549c46fa254b155"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wubuze/g2b2g/zipball/1910801fb69d9265779f7d653549c46fa254b155",
-                "reference": "1910801fb69d9265779f7d653549c46fa254b155",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">= 5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "G2B2G\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "gbk2big52gbk for PHP ",
-            "keywords": [
-                "big5 to gbk",
-                "gbk to big5"
-            ],
-            "time": "2018-07-17T08:33:35+00:00"
-        },
-        {
-            "name": "wubuze/upload-file",
+            "name": "wubuze/backend-system",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/gnwai/uploadFile.git",
-                "reference": "2f5ce3694899f0a6400bd1a451dfb1f941ab03f8"
+                "url": "https://github.com/gnwai/backend-system.git",
+                "reference": "567718974c6fc544813adfebe74b5d00249d3c1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gnwai/uploadFile/zipball/2f5ce3694899f0a6400bd1a451dfb1f941ab03f8",
-                "reference": "2f5ce3694899f0a6400bd1a451dfb1f941ab03f8",
+                "url": "https://api.github.com/repos/gnwai/backend-system/zipball/567718974c6fc544813adfebe74b5d00249d3c1f",
+                "reference": "567718974c6fc544813adfebe74b5d00249d3c1f",
                 "shasum": ""
             },
             "require": {
@@ -3780,13 +3746,55 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "UploadFile\\UploadFileServiceProvider"
+                        "Wubuze\\BackendSystem\\LaravelServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "UploadFile\\": "src"
+                    "Wubuze\\BackendSystem\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "laravel backend set system",
+            "keywords": [
+                "admin setting",
+                "system set"
+            ],
+            "time": "2019-01-26T15:16:50+00:00"
+        },
+        {
+            "name": "wubuze/upload-file",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gnwai/uploadFile.git",
+                "reference": "f16cfbc00e4f15d71af8a1d66ca0df6370391d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gnwai/uploadFile/zipball/f16cfbc00e4f15d71af8a1d66ca0df6370391d68",
+                "reference": "f16cfbc00e4f15d71af8a1d66ca0df6370391d68",
+                "shasum": ""
+            },
+            "require": {
+                "jdavidbakr/replaceable-model": "^1.0",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Wubuze\\UploadFile\\UploadFileServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wubuze\\UploadFile\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3798,7 +3806,7 @@
                 "upload file",
                 "upload img"
             ],
-            "time": "2019-01-24T09:23:14+00:00"
+            "time": "2019-01-28T06:12:46+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -5638,6 +5646,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "wubuze/backend-system": 20,
         "wubuze/upload-file": 20
     },
     "prefer-stable": true,
