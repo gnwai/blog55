@@ -26,6 +26,16 @@
             <li>支持在线用户数实时统计推送（见页脚统计）</li>
             <li>支持在线页面数实时统计推送（见页脚统计）</li>
         </ul>
+        <div class="panel-body">
+
+            <div class="form-group">
+                <textarea class="form-control wait-send" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary pull-right"
+                    role="button" id="send2">发送消息
+            </button>
+        </div>
+
         <h3>测试:</h3>
         当前用户uid：<b class="uid"></b><br>
         可以通过url：<a id="send_to_one" href="http://www.workerman.net:2121/?type=publish&to=1445590039000&content=%E6%B6%88%E6%81%AF%E5%86%85%E5%AE%B9" target="_blank"><font style="color:#91BD09">http://<font class="domain"></font>:2121?type=publish&to=<b class="uid"></b>&content=消息内容</font></a>  向当前用户发送消息<br>
@@ -54,12 +64,21 @@
                 $('#content').html('收到消息：'+msg);
                 $('.notification.sticky').notify();
             });
+
             // 后端推送来在线数据时
             socket.on('update_online_count', function(online_stat){
                 $('#online_box').html(online_stat);
             });
+
+
+            $("#send2").click(function(){
+                console.log('发送成功!');
+                // send(e);
+                socket.emit('msg', $('.wait-send').val());
+            });
         });
     </script>
+
     <div id="footer">
         <center id="online_box"></center>
         <center><p style="font-size:11px;color:#555;"> Powered by <a href="http://www.workerman.net/web-sender" target="_blank"><strong>web-msg-sender!</strong></a></p></center>

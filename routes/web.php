@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 #demo
 Route::any('/upload/index', 'UploadFile@index');
-Route::get('/webImg/index', 'WebIm@index');
+Route::get('/webIm/index', 'WebIm@index');
 
 
 

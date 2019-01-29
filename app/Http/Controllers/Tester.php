@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Illuminate\Support\Facades\Redis;
-use G2B2G\Ufff;
 
 class Tester extends Controller
 {
@@ -22,7 +21,6 @@ class Tester extends Controller
     public function wubuze(Request $req) {
 
 
-        return Ufff::gb2312_big5('吴步泽');
 
 
         return 1;
@@ -34,6 +32,21 @@ class Tester extends Controller
         return 1;
 
     }
+
+
+
+    #使用debug
+    public function useDebug()
+    {
+        #保存debug
+        self::debug('要保存的信息');
+
+        #获取debug
+        return self::debug();
+    }
+
+
+
 
     public function showLog( Request $req ) {
 
@@ -50,6 +63,8 @@ class Tester extends Controller
 		echo file_put_contents($file,'');
 		echo 'ok';
 	}
+
+
 
 
 

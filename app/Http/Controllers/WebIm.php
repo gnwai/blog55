@@ -7,7 +7,7 @@ use Workerman\Worker;
 use PHPSocketIO\SocketIO;
 use Workerman\Lib\Timer;
 
-# 网页聊天室
+# 网页聊天室 使用 SocketIO
 class WebIm extends Controller
 {
 
@@ -54,7 +54,7 @@ class WebIm extends Controller
         $sender_io->on('connection', function($socket){
             // 当客户端发来登录事件时触发
             $socket->on('login', function ($uid)use($socket){
-                \Log::info('login:'.$uid);
+//                \Log::info('login:'.$uid);
                 global $uidConnectionMap, $last_online_count, $last_online_page_count;
                 // 已经登录过了
                 if(isset($socket->uid)){
@@ -75,10 +75,21 @@ class WebIm extends Controller
 
                 #wbz
                 $last_online_count = count($uidConnectionMap);
-
+                $last_online_page_count = array_sum($uidConnectionMap);
 
                 // 更新这个socket对应页面的在线数据
                 $socket->emit('update_online_count', "当前<b>{$last_online_count}</b>人在线，共打开<b>{$last_online_page_count}</b>个页面");
+            });
+
+
+            $socket->on('msg', function ($msg)use($socket){
+                \Log::info('信息:'.$msg);
+                \Log::info('uid:'.$socket->uid);
+
+                #发送给当前用户
+                $socket->emit('new_msg', $socket->uid.':'.$msg);
+                #发给其他所有客户端
+//                $socket->broadcast->emit('new_msg', $socket->uid.':'.$msg);
             });
 
             // 当客户端断开连接是触发（一般是关闭网页或者跳转刷新导致）
@@ -121,17 +132,6 @@ class WebIm extends Controller
 
 
         });*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 
