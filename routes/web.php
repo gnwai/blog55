@@ -39,6 +39,15 @@ Route::group(['prefix' => 'home'], function () {
 });
 
 
+Route::group(['prefix' => 'product'], function () {
+
+
+    Route::any('useDebugDemo', 'Product@useDebugDemo');
+
+
+});
+
+
 
 
 Auth::routes();
