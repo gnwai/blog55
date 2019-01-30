@@ -3,13 +3,13 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Http\Controllers\WebIm as WebImCtl;
+use App\Http\Controllers\WebSend as WebImCtl;
 
-class WebIm extends Command
+class WebSend extends Command
 {
-    protected $signature = 'WebIm:http {action : start|stop|restart} {--d}';
+    protected $signature = 'webSend:http {action : start|stop|restart} {--d}';
 
-    protected $description = 'webIm run';
+    protected $description = 'WebSend run';
 
     protected $action;
 
@@ -23,7 +23,7 @@ class WebIm extends Command
 
         $action = $this->argument('action');
 
-        $argv[0] = 'WebIm';
+        $argv[0] = 'WebSend';
         $argv[1] = $action;
         $argv[2] = $this->option('d') ? '-d' : '';
 

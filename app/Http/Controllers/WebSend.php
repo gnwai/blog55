@@ -7,8 +7,8 @@ use Workerman\Worker;
 use PHPSocketIO\SocketIO;
 use Workerman\Lib\Timer;
 
-# 网页聊天室 使用 SocketIO
-class WebIm extends Controller
+# 浏览器推送 使用 SocketIO
+class WebSend extends Controller
 {
 
     public function __construct()
@@ -27,7 +27,7 @@ class WebIm extends Controller
 
 
     /**
-     * 启动   php artisan WebIm:http start
+     * 启动   php artisan webSend:http start
      */
     public function start()
     {
