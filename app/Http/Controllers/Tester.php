@@ -5,20 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Illuminate\Support\Facades\Redis;
+//use App\Contracts\EventPusher;
 
 class Tester extends Controller
 {
 
+    protected $pusher;
     public function __construct()
     {
 
 //        $this->middleware('auth');
+//        $this->pusher = $pusher;
     }
 
 
 
     //test
     public function wubuze(Request $req) {
+
 
 
 

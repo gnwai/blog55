@@ -31,6 +31,11 @@ Route::group(['prefix' => 'home'], function () {
     Route::any('/room', 'HomeController@room');
     Route::any('/workerman', 'HomeController@workerman');
 
+
+    #商品和标签 多对多的demo
+    Route::any('/productMark', 'HomeController@productMark');
+
+
 });
 
 

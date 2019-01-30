@@ -11,6 +11,7 @@ class Chat extends Controller
 
     /**
      * 聊天首页 服务端不在此项目中
+     * @ https://www.workerman.net/workerman-chat
      */
     public function index()
     {

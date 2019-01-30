@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Product\Product;
 
 class HomeController extends Controller
 {
@@ -49,5 +50,21 @@ class HomeController extends Controller
     {
         return $req->session()->all();
         return 'home/test';
+    }
+
+
+    /**
+     * 商品标签 多对多关联
+     */
+    public function productMark()
+    {
+
+
+        $pro =  Product::with('mark')->find(1);
+
+        #更新关联 参数 mark_id 数组
+        $pro->markLink([1,2,3]);
+
+        return $pro;
     }
 }

@@ -9,3 +9,4 @@ Route::get('/clearLog', 'Tester@clearLog');
 
 Route::get('/mail', 'Tester@mail');
 
+
