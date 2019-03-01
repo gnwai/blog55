@@ -67,4 +67,40 @@ class HomeController extends Controller
 
         return $pro;
     }
+
+
+    /**
+     * 审核qc  (sd 系统)
+     * @param $step boolean 审核是否通过
+     * @param $step_remark string 最终审核备注说明
+     * @developer Kane
+     */
+    public function checkQc(Request $req)
+    {
+        $qc = QC::find($req->id);
+
+        if (!$qc) {
+            return $this->resFail('QC报告不存在。');
+        }
+
+        if (!$qc->isStepCheckAble()) {
+            return $this->resFail($qc->getDebug());
+        }
+
+//		if ($qc->isQtyOverload()) {
+//			return $this->resFail($qc->getDebug());
+//		}
+
+        $step = $req->step;
+        $remark = $req->step_remark;
+
+        \DB::transaction(function() use (&$step, &$remark, &$qc) {
+            $step ? $qc->checkDone($remark) : $qc->checkDoneButError($remark);
+            $qc->save();
+            $step || $qc->purchaseItem()->decrement('qc_qty' , $qc->qty);
+        });
+
+        return $this->statusResponse('success', 'QC报告审核完毕。');
+
+    }
 }
